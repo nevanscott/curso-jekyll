@@ -1,0 +1,16 @@
+---
+---
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+<body>
+
+{% include header.html %}
+
+<section id="main"{% if page.wide %} class="wide"{% endif %}>
+{% if page.wide %}<div class="page">{{ content }}</div>{% else %}{{ content }}{% endif %}
+</section>
+
+{% include scripts.html %}
+</body>
+</html>
