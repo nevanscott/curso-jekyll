@@ -52,6 +52,31 @@ layout: default
 		</ul>
 	{% endif %}
 
+	{% assign resources = site.resources | where_exp:"item","item.topics contains page.title" %}
+	{% if resources.size > 0 %}
+		<h4>Resources</h4>
+		<ul>
+		{% for post in resources %}
+			<li>
+				<span class="label">{{ post.format }}</span>
+				<a href="{{ post.link }}">
+				  {{- post.title | markdownify | strip_html | strip -}}
+					{%- if post.subtitle -%}
+				    <span class="subtitle">: {{ post.subtitle }}</span>
+				  {%- endif -%}
+				</a>
+				{% if post.author -%}
+					<span class="byline">by {{ post.author }}</span>
+				{%- endif %}
+				{% if post.source -%}
+					<span class="source">from {{ post.source }}</span>
+				{%- endif %}
+				<small>{{ post.link | remove:"http://" | remove:"https://" | remove:"www." | split:"/" | first }}</small>
+			</li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+
 </article>
 
 <aside id="nav">
