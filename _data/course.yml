@@ -5,11 +5,6 @@ city: Barcelona
 school:
   name: Ironhack
   abbreviation: IH
-nav:
-  - HOME
-  - topics
-  - resources
-  - about
 start_date: April 1, 2019
 days: 45
 repo:
@@ -18,22 +13,3 @@ repo:
 teacher:
   name: Nevan Scott
   url: https://nevanscott.com
-
-about_nav:
-  -
-    section: About the Course
-    notes:
-      - about
-      - about/syllabus
-      - about/outcomes
-
-resources_nav:
-  -
-    section: Resources
-    notes:
-      - resources
-      - resources/reading
-      - resources/sketch-app
-      - resources/ui-elements
-      - resources/portfolio
-      - resources/misc

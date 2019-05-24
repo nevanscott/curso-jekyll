@@ -1,0 +1,24 @@
+main:
+  - HOME
+  - topics
+  - resources
+  - about
+
+about:
+  -
+    section: About the Course
+    notes:
+      - about
+      - about/syllabus
+      - about/outcomes
+
+resources:
+  -
+    section: Resources
+    notes:
+      - resources
+      - resources/reading
+      - resources/sketch-app
+      - resources/ui-elements
+      - resources/portfolio
+      - resources/misc
