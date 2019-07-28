@@ -1,6 +1,7 @@
 ---
+layout: page
 title: Outcomes
-permalink: /about/outcomes/
+permalink: /outcomes/
 ---
 
 Here you have the links where you can find all the resources that Gemma from Outcomes will refer to:

@@ -3,8 +3,21 @@ layout: default
 ---
 
 <article>
-	<h1>
-		{{ page.title | markdownify | strip_html | strip }}
-	</h1>
+	{% include page/header.html %}
+	{% if page.objectives %}
+		<h2>Learning Objectives</h2>
+		<ul>
+		  {% for objective in page.objectives %}
+		    <li>{{ objective | smartify }}</li>
+		  {% endfor %}
+		</ul>
+	{% endif %}
+	{% if page.resources %}
+		<h2>Resources</h2>
+	  {% for resource in page.resources %}
+	    {% assign post = site.resources | where: "title" , resource | first %}
+			{% include post/preview.html strong=true %}
+	  {% endfor %}
+	{% endif %}
 	{{ content }}
 </article>

@@ -6,8 +6,6 @@ backend:
   name: git-gateway
   branch: master
 
-publish_mode: editorial_workflow
-
 media_folder: "assets/images"
 
 collections:
@@ -95,6 +93,15 @@ collections:
         name: "body"
         required: false
         widget: "markdown"
+      - label: "Resources"
+        name: "resources"
+        required: false
+        widget: "relation"
+        collection: "resource"
+        searchFields: ["title", "author", "source", "link"]
+        valueField: "title"
+        displayFields: ["title"]
+        multiple: true
       - label: "Prep Homework"
         hint: "These links will be assigned the day before the lesson."
         name: "prep"
@@ -108,7 +115,7 @@ collections:
             name: title
             widget: string
           - label: URL
-            name: url
+            name: link
             widget: string
           - label: Author
             name: author
@@ -217,6 +224,7 @@ collections:
   - name: "unit"
     label: "Unit"
     folder: "_units"
+    create: true
     slug: "{{slug}}"
     fields:
       - label: "Title"

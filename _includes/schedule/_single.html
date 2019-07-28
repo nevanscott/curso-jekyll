@@ -1,15 +1,13 @@
-<div
-  data-date="{{ date_xml }}"
-  class="calendar-date {{ date_xml | date:"%B" | downcase }}"
->
-  <div class="date {{ dow | downcase }} day-{{ dom }}">
-    <span class="day">{{ dom }}</span>
-    <span class="month">{{ date_xml | date:"%B" }}</span>
+{%- assign day_page = site.pages | where:"category","days" | where:"day",day | first -%}
+<div class="sidebar-layout">
+  <div class="not-sidebar">
+    {% include schedule/agenda.html %}
+    {% include schedule/projects.html %}
+    {% include schedule/assignments.html %}
   </div>
-  {% include schedule/due.html %}
-  {% include schedule/agenda.html %}
-  {% include schedule/projects.html %}
-  {% include schedule/meetings.html %}
-  {% include schedule/outcomes.html %}
-  {% include schedule/assignments.html %}
+  <div class="sidebar">
+    {% include schedule/due.html %}
+  </div>
 </div>
+{% include schedule/meetings.html %}
+{% include schedule/outcomes.html %}

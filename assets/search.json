@@ -7,7 +7,7 @@ permalink: search.json
     {
       "label"    : "Lesson",
       "title"    : "{{ post.title | smartify | escape }}",
-      "content"  : "{{ post.content | strip_html | strip_newlines | escape }}",
+      "content"  : "{{ post.content | strip_html | normalize_whitespace | escape }}",
       "category" : "{{ post.category }}",
       "tags"     : "{{ post.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
@@ -19,7 +19,7 @@ permalink: search.json
     {
       "label"    : "Homework",
       "title"    : "{{ post.title | smartify | escape }}",
-      "content"  : "{{ post.content | strip_html | strip_newlines | escape }}",
+      "content"  : "{{ post.content | strip_html | normalize_whitespace | escape }}",
       "category" : "{{ post.category }}",
       "tags"     : "{{ post.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
@@ -31,7 +31,7 @@ permalink: search.json
     {
       "label"    : "Project",
       "title"    : "{{ post.title | smartify | escape }}",
-      "content"  : "{{ post.content | strip_html | strip_newlines | escape }}",
+      "content"  : "{{ post.content | strip_html | normalize_whitespace | escape }}",
       "category" : "{{ post.category }}",
       "tags"     : "{{ post.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",

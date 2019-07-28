@@ -3,13 +3,15 @@
 <!doctype html>
 <html lang="en">
 {% include head.html %}
-<body>
+{%- assign url_parts = page.url | split:"/" -%}
+{%- assign section_slug = url_parts[1] -%}
+<body class="{{ section_slug }}">
 
 {% include header.html %}
 
-<section id="main"{% if page.wide %} class="wide"{% endif %}>
-{% if page.wide %}<div class="page">{{ content }}</div>{% else %}{{ content }}{% endif %}
-</section>
+<main>
+{{ content }}
+</main>
 
 {% include scripts.html %}
 </body>

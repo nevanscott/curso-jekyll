@@ -31,48 +31,42 @@ defaults:
       path: ""
       type: "lessons"
     values:
-      layout: "lesson"
+      layout: "page"
   -
     scope:
       path: ""
       type: "homework"
     values:
-      layout: "homework"
+      layout: "page"
   -
     scope:
       path: ""
       type: "projects"
     values:
-      layout: "project"
+      layout: "page"
   -
     scope:
       path: ""
       type: "meetings"
     values:
-      layout: "meeting"
+      layout: "page"
   -
     scope:
       path: ""
       type: "outcomes"
     values:
-      layout: "outcomes"
+      layout: "page"
   -
     scope:
       path: ""
       type: "topics"
     values:
       layout: "topic"
-
   -
     scope:
-      path: "pages/about"
+      path: "pages"
     values:
-      layout: "about"
-  -
-    scope:
-      path: "pages/resources"
-    values:
-      layout: "resources"
+      layout: "page"
 
 relative_permalinks: false
 future: false

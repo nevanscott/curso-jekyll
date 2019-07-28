@@ -1,29 +1,79 @@
-a.card {
-  color: inherit;
-  display: block;
-	font-weight: 500;
-  line-height: 1.3;
-  margin: 0.5rem -0.5rem;
-  padding: 0.5rem;
-	transition: background-color 200ms, border-color 200ms;
-  text-decoration: none;
-  &::before {
-    content: '';
-    display: block;
-    width: 1.5em;
-    height: 3px;
-    background: $secondary;
-    margin-bottom: 0.25em;
+.card {
+  & + & {
+    margin-top: var(--space-400);
   }
-  .label {
-    font-size: 0.7em;
-    color: $brand-400;
+  a {
+    background-color: var(--pale);
+    border: none;
+    box-shadow:
+      var(--space-200)
+      var(--space-200)
+      0
+      0
+      var(--white)
+      ,
+      var(--space-300)
+      var(--space-300)
+      0
+      0
+      var(--goldenrod)
+      ;
     display: block;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-family: var(--font-interface);
+    font-size: var(--font-size-500);
+    padding: var(--space-400);
+    margin-left: calc(-1 * var(--space-400));
+    margin-right: calc(-1 * var(--space-400));
+    &:hover {
+      box-shadow:
+        var(--space-200)
+        var(--space-200)
+        0
+        0
+        var(--white)
+        ,
+        var(--space-300)
+        var(--space-300)
+        0
+        0
+        var(--pumpkin)
+        ;
+    }
+    &::after {
+      display: none;
+    }
+    &[href^="http"] {
+      &::before {
+        content: "↗";
+        color: var(--indigo);
+        line-height: 1;
+        float: right;
+        margin-left: var(--space-400);
+        margin-bottom: var(--space-400);
+        font-family: var(--font-icon);
+        font-size: var(--font-size-500);
+        font-weight: 700;
+        transform: translateX(2px);
+      }
+    }
+    .label {
+      color: var(--indigo);
+      font-family: var(--font-label);
+      font-size: var(--font-size-300);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    h3 {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .meta, .description {
+      color: var(--slate);
+      font-size: var(--font-size-300);
+      margin-top: var(--space-300);
+    }
   }
-}
-a.card:hover {
-  background-color: white;
 }
